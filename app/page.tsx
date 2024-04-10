@@ -1,21 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import { countCharacters, ellipsis } from "@/utils/strings"
-import { SewingPinFilledIcon } from "@radix-ui/react-icons"
+import { countCharacters } from "@/utils/strings"
 import Marquee from "react-fast-marquee"
-import {
-  FaEnvelope,
-  FaGithub,
-  FaTwitter,
-  FaUnsplash,
-  FaXTwitter,
-} from "react-icons/fa6"
 import { format } from "timeago.js"
 
 import useMusic from "@/hooks/useMusic"
-import { Button, buttonVariants } from "@/components/ui/button"
-import { iconButtonVariants } from "@/components/ui/icon-button"
 import { Tooltip } from "@/components/ui/tooltip"
 
 export default function IndexPage() {

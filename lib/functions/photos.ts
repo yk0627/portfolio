@@ -17,7 +17,7 @@ export const getPhotos = async () => {
 
   const resData = await res.json()
 
-  const photos = resData.map((photo: any, index) => ({
+  const photos = resData.map((photo: any, index: any) => ({
     ...photo,
     orientation: photo.height > photo.width ? "portrait" : "landscape",
     index,

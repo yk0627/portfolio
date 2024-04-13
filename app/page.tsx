@@ -3,6 +3,13 @@
 import Link from "next/link"
 import { countCharacters } from "@/utils/strings"
 import Marquee from "react-fast-marquee"
+import {
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaUnsplash,
+  FaXTwitter,
+} from "react-icons/fa6"
 import { format } from "timeago.js"
 
 import useMusic from "@/hooks/useMusic"
@@ -15,7 +22,7 @@ export default function IndexPage() {
 
   return (
     // <div className="magicpattern">
-    <div className="h-[100vh] relative pt-4 px-8 max-w-lg mx-auto w-full md:border-l md:border-r">
+    <div className="h-[100vh] relative pt-4 px-8 max-w-2xl mx-auto w-full">
       <header className="flex gap-2 items-center justify-between text-zinc-400">
         <h1>anish de</h1>
 
@@ -34,7 +41,7 @@ export default function IndexPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="bg-secondary rounded-full border border-zinc-900 px-2 py-1 flex gap-1 items-center justify-center w-fit">
+              <div className="bg-secondary rounded-full border border-zinc-900 px-2 py-1 flex gap-1 items-center justify-center w-fit hover:opacity-60 transition-opacity duration-200 ease-in-out">
                 📍 blr, in
               </div>
             </Link>
@@ -55,11 +62,12 @@ export default function IndexPage() {
                         <p>{latestTrack.artist["#text"]}</p>
                       </div>
                     </div>
+
                     {isNowPlaying
                       ? "🎧 Playing Now"
                       : `Played ${
                           latestTrack.date &&
-                          format(latestTrack.date?.["#text"])
+                          format(new Date(Number(latestTrack.date?.uts) * 1000))
                         }`}
                   </div>
                 }
@@ -69,7 +77,7 @@ export default function IndexPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="bg-secondary rounded-full border border-zinc-900 px-2 py-1 flex gap-1 items-center justify-left max-w-[18rem]">
+                  <div className="bg-secondary rounded-full border border-zinc-900 px-2 py-1 flex gap-1 items-center justify-left max-w-[18rem] hover:opacity-60 transition-opacity duration-200 ease-in-out">
                     {/* {isNowPlaying
           ? "🎧"
           : `${
@@ -129,6 +137,52 @@ export default function IndexPage() {
             <p></p>
           </div> */}
         </div>
+        <div className="flex gap-4 mt-8">
+          <a
+            href="https://twitter.com/AnishDe12020"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition-opacity duration-200 ease-in-out"
+          >
+            <FaXTwitter className="w-4 h-4 text-white" />
+          </a>
+          <a
+            href="https:// github.com/AnishDe12020"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition-opacity duration-200 ease-in-out"
+          >
+            <FaGithub className="w-4 h-4 text-white" />
+          </a>
+
+          <a
+            href="https://unsplash.com/@anishde12020"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition-opacity duration-200 ease-in-out"
+          >
+            <FaUnsplash className="w-4 h-4 text-white" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/anish-de-5b0a79266/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition-opacity duration-200 ease-in-out"
+          >
+            <FaLinkedin className="w-4 h-4 text-white" />
+          </a>
+
+          <a
+            href="mailto:contact@anishde.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition-opacity duration-200 ease-in-out"
+          >
+            <FaEnvelope className="w-4 h-4 text-white" />
+          </a>
+        </div>
+
         {/* <div className="flex gap-4 mt-8">
           <a
             href="https://twitter.com/AnishDe12020"

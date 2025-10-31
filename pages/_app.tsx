@@ -9,7 +9,7 @@ import KProvider from "@/components/Common/KProvider";
 import useCircles from "store/circles";
 
 import "../styles/globals.css";
-// changed
+// not much changed 10% changed
 import "@fontsource/syncopate";
 import "@fontsource/sen";
 import Footer from "@/components/Common/Footer";
